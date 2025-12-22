@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اینفوگرافیک رزومه: محمدرضا مجیدزاده | متخصص داده و هوش تجاری</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Font: Vazirmatn -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Vazirmatn', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#4F46E5', // Indigo 600
+                        secondary: '#06B6D4', // Cyan 500
+                        accent: '#F59E0B', // Amber 500
+                        dark: '#1E293B', // Slate 800
+                        ai: '#8B5CF6',      // Violet
+                        dev: '#E11D48',     // Rose
+                        exp: '#3B82F6',     // Blue
+                        edu: '#10B981',     // Emerald
+                        more: '#64748B',    // Slate for More Info
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #F8FAFC;
+            color: #334155;
+            scroll-behavior: smooth;
+        }
+
+        /* Chart Container Styling */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+
+        /* Timeline Styling */
+        .timeline-line {
+            position: absolute;
+            right: 1.5rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E2E8F0;
+        }
+        .timeline-dot {
+            position: absolute;
+            right: 1.1rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 9999px;
+            border: 2px solid white;
+            z-index: 10;
+        }
+
+        /* Navigation Active State */
+        .nav-item {
+            transition: all 0.2s ease;
+            border-right: 3px solid transparent;
+        }
+        .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #fff;
+        }
+        .nav-active {
+            background: linear-gradient(90deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0) 100%);
+            border-right: 3px solid #F59E0B;
+            color: white !important;
+            font-weight: 700;
+        }
+
+        /* Icon Styling */
+        .icon-box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            background-color: rgba(79, 70, 229, 0.1);
+            color: #4F46E5;
+            margin-left: 8px;
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        
+        /* Tech Badge */
+        .tech-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .tech-badge:hover {
+            transform: translateY(-2px);
+        }
+        .badge-ai { background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.2); color: #6D28D9; }
+        .badge-ai:hover { background: rgba(139, 92, 246, 0.2); }
+        
+        .badge-dev { background: rgba(225, 29, 72, 0.1); border: 1px solid rgba(225, 29, 72, 0.2); color: #BE123C; }
+        .badge-dev:hover { background: rgba(225, 29, 72, 0.2); }
+
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <div class="flex flex-col md:flex-row min-h-screen">
+        
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="w-full md:w-64 bg-slate-900 text-slate-300 flex-shrink-0 md:h-screen md:sticky md:top-0 z-50 flex flex-col shadow-2xl">
+            <div class="p-6 bg-slate-800 flex items-center justify-center md:justify-start gap-3 border-b border-slate-700">
+                <img src="DSC01320.jpg" alt="Profile" class="w-10 h-10 rounded-lg object-cover shadow-lg shadow-indigo-500/50">
+                <span class="font-bold text-white tracking-wide">محمدرضا مجیدزاده</span>
+            </div>
+
+            <nav class="flex-1 overflow-y-auto py-6 px-0 space-y-1">
+                <a href="#header" class="nav-item flex items-center gap-3 px-6 py-4 text-sm hover:text-white group">
+                    <i class="fa-solid fa-house w-5 text-center group-hover:text-indigo-400 transition-colors"></i> 
+                    <span class="font-medium">پروفایل اصلی</span>
+                </a>
+                <a href="#summary" class="nav-item flex items-center gap-3 px-6 py-4 text-sm hover:text-white group">
+                    <i class="fa-solid fa-align-right w-5 text-center group-hover:text-indigo-400 transition-colors"></i> 
+                    <span class="font-medium">درباره من</span>
+                </a>
+                <a href="#skills-detailed" class="nav-item flex items-center gap-3 px-6 py-4 text-sm hover:text-white group">
+                    <i class="fa-solid fa-list-check w-5 text-center group-hover:text-indigo-400 transition-colors"></i> 
+                    <span class="font-medium">مهارت‌ها</span>
+                </a>
+                <a href="#ai-skills" class="nav-item flex items-center gap-3 px-6 py-4 text-sm hover:text-white group">
+                    <i class="fa-solid fa-brain w-5 text-center group-hover:text-violet-400 transition-colors"></i> 
+                    <span class="font-medium">مهارت‌های AI</span>
+                </a>
+                <a href="#dev-skills" class="nav-item flex items-center gap-3 px-6 py-4 text-sm hover:text-white group">
+                    <i class="fa-solid fa-code w-5 text-center group-hover:text-rose-400 transition-colors"></i> 
+                    <span class="font-medium">توسعه نرم‌افزار</span>
+                </a>
+                <a href="#soft-skills" class="nav-item flex items-center gap-3 px-6 py-4 text-sm hover:text-white group">
+                    <i class="fa-solid fa-puzzle-piece w-5 text-center group-hover:text-amber-400 transition-colors"></i> 
+                    <span class="font-medium">مهارت‌های مکمل</span>
+                </a>
+                <a href="#work-experience" class="nav-item flex items-center gap-3 px-6 py-4 text-sm hover:text-white group">
+                    <i class="fa-solid fa-briefcase w-5 text-center group-hover:text-blue-400 transition-colors"></i> 
+                    <span class="font-medium">سوابق شغلی</span>
+                </a>
+                <a href="#education-history" class="nav-item flex items-center gap-3 px-6 py-4 text-sm hover:text-white group">
+                    <i class="fa-solid fa-graduation-cap w-5 text-center group-hover:text-emerald-400 transition-colors"></i> 
+                    <span class="font-medium">سوابق تحصیلی</span>
+                </a>
+                <a href="#more-info" class="nav-item flex items-center gap-3 px-6 py-4 text-sm hover:text-white group">
+                    <i class="fa-solid fa-circle-info w-5 text-center group-hover:text-slate-400 transition-colors"></i> 
+                    <span class="font-medium">اطلاعات بیشتر</span>
+                </a>
+            </nav>
+
+            <div class="p-4 bg-slate-900 text-xs text-center text-slate-500 border-t border-slate-800">
+                &copy; ۲۰۲۵ محمدرضا مجیدزاده
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="flex-1 overflow-x-hidden relative">
+            
+            <!-- HEADER -->
+            <header id="header" class="scroll-section bg-white shadow-sm border-b border-slate-200 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 -mr-16 -mt-16"></div>
+                
+                <div class="max-w-6xl mx-auto px-6 py-12 relative z-10">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
+                        <div class="relative shrink-0 group">
+                            <!-- UPDATED PROFILE IMAGE -->
+                            <img src="DSC01320.jpg" 
+                                 alt="Profile Photo" 
+                                 class="w-40 h-40 rounded-full object-cover border-4 border-white shadow-xl bg-indigo-50 ring-2 ring-indigo-100 group-hover:scale-105 transition-transform duration-300">
+                        </div>
+
+                        <div class="text-center md:text-right flex-1 w-full pt-2">
+                            <h1 class="text-3xl md:text-5xl font-black text-slate-800 mb-3 tracking-tight">محمدرضا مجیدزاده</h1>
+                            <h2 class="text-lg md:text-2xl text-indigo-600 font-bold mb-8 tracking-wide flex items-center justify-center md:justify-start gap-2" dir="ltr">
+                                BI Developer and BI Analyst <span class="text-slate-300">|</span> Data Automation <span class="text-slate-300">|</span> Ai
+                            </h2>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-6 text-sm text-slate-600">
+                                <div class="flex items-center justify-center md:justify-start gap-3 hover:text-indigo-600 transition-colors p-2 rounded-lg hover:bg-slate-50">
+                                    <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                                    <span class="pt-1 font-medium">mo.majidzadeh@yahoo.com</span>
+                                </div>
+                                <div class="flex items-center justify-center md:justify-start gap-3 hover:text-indigo-600 transition-colors p-2 rounded-lg hover:bg-slate-50">
+                                    <div class="icon-box"><i class="fa-solid fa-phone-flip"></i></div>
+                                    <span class="pt-1 font-medium">۰۹۳۵۳۰۷۸۶۰۴</span>
+                                </div>
+                                <div class="flex items-center justify-center md:justify-start gap-3 hover:text-indigo-600 transition-colors p-2 rounded-lg hover:bg-slate-50">
+                                    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                                    <span class="pt-1 font-medium">تهران، ایران</span>
+                                </div>
+                                <div class="flex items-center justify-center md:justify-start gap-3 hover:text-indigo-600 transition-colors p-2 rounded-lg hover:bg-slate-50">
+                                    <div class="icon-box"><i class="fa-brands fa-linkedin-in"></i></div>
+                                    <a href="https://linkedin.com/in/mohamadreza-majidzadeh" target="_blank" class="pt-1 hover:underline font-medium" dir="ltr">
+                                        /in/mohamadreza-majidzadeh
+                                    </a>
+                                </div>
+                                <div class="flex items-center justify-center md:justify-start gap-3 hover:text-indigo-600 transition-colors p-2 rounded-lg hover:bg-slate-50">
+                                    <div class="icon-box"><i class="fa-solid fa-cake-candles"></i></div>
+                                    <span class="pt-1 font-medium">۱۳۷۵/۰۴/۲۷</span>
+                                </div>
+                                <div class="flex items-center justify-center md:justify-start gap-3 hover:text-indigo-600 transition-colors p-2 rounded-lg hover:bg-slate-50">
+                                    <div class="icon-box"><i class="fa-solid fa-ring"></i></div>
+                                    <span class="pt-1 font-medium">مجرد</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- CONTENT BODY -->
+            <div class="max-w-6xl mx-auto px-6 py-12 space-y-20">
+
+                <!-- Introduction Section -->
+                <section id="summary" class="scroll-section bg-white rounded-2xl shadow-sm p-8 border-r-4 border-indigo-600 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-20 h-20 bg-indigo-50 rounded-br-full -z-0"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-extrabold text-slate-800 mb-4 flex items-center gap-3">
+                            <i class="fa-solid fa-quote-right text-indigo-200 text-3xl"></i>
+                            درباره من
+                        </h3>
+                        <p class="text-slate-600 leading-8 text-justify font-medium">
+                            حدودا ۴ ساله که به دیتا و آنالیز آنها علاقه‌مند شدم و سعی می‌کنم هر روز به اطلاعات و دانش خودم تو زمینه هوش تجاری و آنالیز دیتا اضافه کنم.
+                            علاقه زیادی به یادگیری تکنولوژی مصورسازی، AI و هنر دارم.
+                            همیشه دنبال یه چالشی هستم تا توانایی‌هام رو باهاش بسنجم.
+                            تو اوقات فراغتم سعی می‌کنم به کارهایی بپردازم که برام جدید هستن؛ کارهایی که به رشد شخصیت و ذهنم کمک می‌کنند.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- SKILLS SECTIONS (Hard, AI, Dev, Soft) -->
+                
+                <!-- 1. Hard Skills -->
+                <section id="skills-detailed" class="scroll-section relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-white opacity-50 -z-10 rounded-3xl"></div>
+                    <div class="bg-white/60 backdrop-blur-lg rounded-3xl shadow-sm border border-white/50 p-8">
+                        <div class="mb-8 border-b border-slate-200/60 pb-4">
+                            <h3 class="text-2xl font-black text-slate-800 flex items-center gap-3 mb-2">
+                                <i class="fa-solid fa-list-check text-indigo-500"></i>
+                                مهارت‌ها
+                            </h3>
+                            <p class="text-md text-slate-600 font-medium">
+                                دسته‌بندی مهارت‌ها به دو بخش: مهارت‌های اصلی متمرکز بر تحلیل داده و هوش تجاری.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                            <div class="lg:col-span-1 flex flex-col gap-8">
+                                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center">
+                                    <h4 class="text-sm font-bold text-slate-700 mb-2 text-center uppercase tracking-wider" style="direction: ltr;">
+                                        Hard Skills Performance Average & Target
+                                    </h4>
+                                    <div class="chart-container flex justify-center items-center relative" style="height: 200px;">
+                                        <canvas id="averageSkillChart"></canvas>
+                                        <div class="absolute bottom-[0%] text-center">
+                                            <div class="text-3xl font-black text-indigo-600">66.7%</div>
+                                            <div class="text-xs text-slate-400 font-medium">Target: 100%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="glass-card p-6 rounded-2xl">
+                                    <h4 class="text-sm font-bold text-slate-700 mb-2 text-center uppercase tracking-wider" style="direction: ltr;">
+                                        Top 6 Skill
+                                    </h4>
+                                    <div class="chart-container" style="height: 280px;">
+                                        <canvas id="topSkillsChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-2">
+                                <div class="glass-card p-6 rounded-2xl h-full">
+                                    <h4 class="text-lg font-bold text-slate-700 mb-6 flex items-center gap-2" style="direction: ltr;">
+                                        <span class="w-2 h-8 bg-indigo-500 rounded-full"></span>
+                                        Hard Skills
+                                    </h4>
+                                    <div class="chart-container" style="height: 600px;">
+                                        <canvas id="hardSkillsChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. AI Skills -->
+                <section id="ai-skills" class="scroll-section relative mt-12">
+                    <div class="absolute inset-0 bg-gradient-to-br from-violet-50 to-white opacity-50 -z-10 rounded-3xl"></div>
+                    <div class="bg-white/60 backdrop-blur-lg rounded-3xl shadow-sm border border-white/50 p-8">
+                        <div class="mb-8 border-b border-violet-200/60 pb-4">
+                            <h3 class="text-2xl font-black text-slate-800 flex items-center gap-3 mb-2">
+                                <i class="fa-solid fa-brain text-violet-500"></i>
+                                مهارت‌های هوش مصنوعی (AI Skills)
+                            </h3>
+                            <p class="text-md text-slate-600 font-medium">
+                                تسلط بر ابزارها و متدهای پیشرفته هوش مصنوعی جهت بهینه‌سازی تحلیل داده و اتوماسیون.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                            <div class="lg:col-span-1">
+                                <div class="glass-card p-6 rounded-2xl h-full border-t-4 border-t-violet-400">
+                                    <h4 class="text-lg font-bold text-slate-700 mb-6 flex items-center gap-2">
+                                        <i class="fa-solid fa-microchip text-violet-500"></i>
+                                        جعبه ابزار AI
+                                    </h4>
+                                    <div class="flex flex-wrap gap-3">
+                                        <div class="tech-badge badge-ai"><i class="fa-solid fa-robot text-lg"></i> ChatGPT</div>
+                                        <div class="tech-badge badge-ai"><i class="fa-brands fa-google text-lg"></i> Google Gemini</div>
+                                        <div class="tech-badge badge-ai"><i class="fa-solid fa-message text-lg"></i> Claude</div>
+                                        <div class="tech-badge badge-ai"><i class="fa-solid fa-magnifying-glass text-lg"></i> Perplexity AI</div>
+                                        <div class="tech-badge badge-ai"><i class="fa-brands fa-microsoft text-lg"></i> Microsoft Copilot</div>
+                                        <div class="tech-badge badge-ai">Julius AI</div>
+                                        <div class="tech-badge badge-ai">NotebookLM</div>
+                                        <div class="tech-badge badge-ai">Powerdrill AI</div>
+                                        <div class="tech-badge badge-ai">Base44.ai</div>
+                                        <div class="tech-badge badge-ai">Gamma</div>
+                                        <div class="tech-badge badge-ai"><i class="fa-solid fa-bolt text-lg"></i> Zapier / Make / n8n</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-2">
+                                <div class="glass-card p-6 rounded-2xl h-full border-t-4 border-t-violet-400">
+                                    <h4 class="text-lg font-bold text-slate-700 mb-6 flex items-center gap-2" style="direction: ltr;">
+                                        <span class="w-2 h-8 bg-violet-500 rounded-full"></span>
+                                        Advanced AI Competencies
+                                    </h4>
+                                    <div class="chart-container" style="height: 400px;">
+                                        <canvas id="aiSkillsChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. Dev Skills -->
+                <section id="dev-skills" class="scroll-section relative mt-12">
+                    <div class="absolute inset-0 bg-gradient-to-br from-rose-50 to-white opacity-50 -z-10 rounded-3xl"></div>
+                    <div class="bg-white/60 backdrop-blur-lg rounded-3xl shadow-sm border border-white/50 p-8">
+                        <div class="mb-8 border-b border-rose-200/60 pb-4">
+                            <h3 class="text-2xl font-black text-slate-800 flex items-center gap-3 mb-2">
+                                <i class="fa-solid fa-code text-rose-500"></i>
+                                مهارت‌های توسعه نرم‌افزار (Development Skills)
+                            </h3>
+                            <p class="text-md text-slate-600 font-medium">
+                                تسلط بر زبان‌ها، فریم‌ورک‌های وب، و پیاده‌سازی سیستم‌های هوشمند و CMS.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                            <div class="lg:col-span-1 flex flex-col gap-8">
+                                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center border-t-4 border-t-rose-400">
+                                    <h4 class="text-sm font-bold text-slate-700 mb-2 text-center uppercase tracking-wider" style="direction: ltr;">
+                                        Dev Skills Average
+                                    </h4>
+                                    <div class="chart-container flex justify-center items-center relative" style="height: 200px;">
+                                        <canvas id="averageDevSkillChart"></canvas>
+                                        <div class="absolute bottom-[0%] text-center">
+                                            <div class="text-3xl font-black text-rose-600">85%</div>
+                                            <div class="text-xs text-slate-400 font-medium">Estimate</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="glass-card p-6 rounded-2xl border-t-4 border-t-rose-400">
+                                    <h4 class="text-sm font-bold text-slate-700 mb-2 text-center uppercase tracking-wider" style="direction: ltr;">
+                                        Dev Profile
+                                    </h4>
+                                    <div class="chart-container" style="height: 280px;">
+                                        <canvas id="devProfileChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-2 flex flex-col gap-6">
+                                <div class="glass-card p-6 rounded-2xl border-t-4 border-t-rose-400">
+                                    <h4 class="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
+                                        <i class="fa-solid fa-layer-group text-rose-500"></i>
+                                        تکنولوژی‌ها و ابزارها
+                                    </h4>
+                                    <div class="flex flex-wrap gap-3">
+                                        <div class="tech-badge badge-dev"><i class="fa-brands fa-python text-lg"></i> Python</div>
+                                        <div class="tech-badge badge-dev">Django</div>
+                                        <div class="tech-badge badge-dev">Flask</div>
+                                        <div class="tech-badge badge-dev">FastAPI</div>
+                                        <div class="tech-badge badge-dev"><i class="fa-brands fa-html5 text-lg"></i> HTML5</div>
+                                        <div class="tech-badge badge-dev"><i class="fa-brands fa-css3-alt text-lg"></i> CSS3</div>
+                                        <div class="tech-badge badge-dev">CRM Systems</div>
+                                        <div class="tech-badge badge-dev">Light Web Panels</div>
+                                        <div class="tech-badge badge-dev">Conversation AI</div>
+                                        <div class="tech-badge badge-dev">Prediction Models</div>
+                                    </div>
+                                </div>
+                                <div class="glass-card p-6 rounded-2xl h-full border-t-4 border-t-rose-400">
+                                    <h4 class="text-lg font-bold text-slate-700 mb-6 flex items-center gap-2" style="direction: ltr;">
+                                        <span class="w-2 h-8 bg-rose-500 rounded-full"></span>
+                                        Coding & Frameworks Proficiency
+                                    </h4>
+                                    <div class="chart-container" style="height: 400px;">
+                                        <canvas id="devSkillsChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. Soft Skills -->
+                <section id="soft-skills" class="scroll-section relative mt-12">
+                    <div class="absolute inset-0 bg-gradient-to-br from-amber-50 to-white opacity-50 -z-10 rounded-3xl"></div>
+                    <div class="bg-white/60 backdrop-blur-lg rounded-3xl shadow-sm border border-white/50 p-8">
+                        <div class="mb-8 border-b border-amber-200/60 pb-4">
+                            <h3 class="text-2xl font-black text-slate-800 flex items-center gap-3 mb-2">
+                                <i class="fa-solid fa-puzzle-piece text-amber-500"></i>
+                                مهارت‌های مکمل و نرم (Soft Skills)
+                            </h3>
+                            <p class="text-md text-slate-600 font-medium">
+                                مهارت‌های مکمل که بعضی از آنها کامل‌کننده مهارت‌های اصلی و بعضی دیگر کامل‌کننده شخصیت و ذهنم هستند.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                            <div class="lg:col-span-1 flex flex-col gap-8">
+                                <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center border-t-4 border-t-amber-400">
+                                    <h4 class="text-sm font-bold text-slate-700 mb-2 text-center uppercase tracking-wider" style="direction: ltr;">
+                                        Soft Skills Performance Average
+                                    </h4>
+                                    <div class="chart-container flex justify-center items-center relative" style="height: 200px;">
+                                        <canvas id="averageSoftSkillChart"></canvas>
+                                        <div class="absolute bottom-[0%] text-center">
+                                            <div class="text-3xl font-black text-amber-600">76.8%</div>
+                                            <div class="text-xs text-slate-400 font-medium">Target: 100%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="glass-card p-6 rounded-2xl border-t-4 border-t-amber-400">
+                                    <h4 class="text-sm font-bold text-slate-700 mb-2 text-center uppercase tracking-wider" style="direction: ltr;">
+                                        Top 6 Soft Skills
+                                    </h4>
+                                    <div class="chart-container" style="height: 280px;">
+                                        <canvas id="topSoftSkillsChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-2">
+                                <div class="glass-card p-6 rounded-2xl h-full border-t-4 border-t-amber-400">
+                                    <h4 class="text-lg font-bold text-slate-700 mb-6 flex items-center gap-2" style="direction: ltr;">
+                                        <span class="w-2 h-8 bg-amber-500 rounded-full"></span>
+                                        Soft & Complementary Skills
+                                    </h4>
+                                    <div class="chart-container" style="height: 600px;">
+                                        <canvas id="softSkillsChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- *** WORK EXPERIENCE *** -->
+                <section id="work-experience" class="scroll-section relative mt-12">
+                    <!-- Blue Glassy Background -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-white opacity-50 -z-10 rounded-3xl"></div>
+                    
+                    <div class="bg-white/60 backdrop-blur-lg rounded-3xl shadow-sm border border-white/50 p-8">
+                        <div class="mb-8 border-b border-blue-200/60 pb-4">
+                            <h3 class="text-2xl font-black text-slate-800 flex items-center gap-3 mb-2">
+                                <i class="fa-solid fa-briefcase text-blue-500"></i>
+                                سوابق شغلی من
+                            </h3>
+                            <p class="text-md text-slate-600 font-medium">
+                                جزئیات دقیق تجربه‌های کاری و دستاوردهای حرفه‌ای
+                            </p>
+                        </div>
+
+                        <div class="space-y-12 relative px-4">
+                            <div class="absolute right-8 top-0 bottom-0 w-1 bg-blue-200 rounded-full md:block hidden"></div>
+
+                            <!-- Experience 1: Boran Market -->
+                            <div class="glass-card p-8 rounded-2xl border-r-4 border-r-blue-500 relative">
+                                <div class="absolute -right-[26px] top-8 w-5 h-5 bg-blue-500 rounded-full border-4 border-white shadow-md z-10 md:block hidden"></div>
+                                <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+                                    <div>
+                                        <h4 class="text-xl font-extrabold text-slate-800 mb-1">شرکت بوران مارکت</h4>
+                                        <h5 class="text-lg font-bold text-blue-600">متخصص داده و تحلیلگر هوش تجاری</h5>
+                                    </div>
+                                    <div class="mt-2 md:mt-0">
+                                        <span class="px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-bold border border-blue-200">
+                                            آذرماه ۱۴۰۰ - تاکنون
+                                        </span>
+                                    </div>
+                                </div>
+                                <ul class="list-none space-y-3 text-sm text-slate-700 leading-7">
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>تعریف معیارهای منطبق با سازوکار شرکت جهت بهبود تبلیغات و فروش</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>ایجاد فرآیند اتوماسیون برای Retargeting</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>ایجاد فرآیند اتوماسیون برای گزارش گیری از Issable</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>ایجاد فرآیند اتوماسیون برای گزارش گیری از Google Analytics جهت بهینه سازی کمپین ها</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>ساخت و بهینه سازی داشبوردهای گزارش گیری در Power BI</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>ایجاد و بهینه سازی دیتابیس در SQL Server</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>مدیر پروژه اجرایی CRM اختصاصی شرکت بوران</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>انتقال دیتاها از منابع مختلف به دیتابیس (ETL)</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>تسهیل فرآیند دریافت دیتا از پلتفرم های مبتنی بر وب</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>تسهیل فرآیند دریافت و انتقال دیتا از سمت واحد کالسنتر و لجستیک (یکپارچه سازی)</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>ساخت فرم در گوگل شیت برای وارد کردن دیتا</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>امکان گزارش گیری لحظه ایی در Power BI Report Server</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>ایجاد فرآیند اتوماسیون برای گزارش گیری از دستگاه حضور غیاب کارکنان و بررسی عملکرد آنها</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>گزارش گیری و تحلیل داده به واسطه کار با Microsoft Graph API برای تیم کالسنتر</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>ایجاد گزارشهای یکپارچه برای تیمها با رعایت اصول RLS</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>تسهیل گزارش گیری واحد مالی</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-blue-500 mt-1.5 text-xs"></i><span>ایجاد پنلهای کاربردی تحت وب جهت تسهیل فرآیندهای اتوماسیون برای مدیران فروش و مدیر لجستیک</span></li>
+                                </ul>
+                            </div>
+
+                            <!-- Experience 2: Freelance -->
+                            <div class="glass-card p-8 rounded-2xl border-r-4 border-r-cyan-500 relative">
+                                <div class="absolute -right-[26px] top-8 w-5 h-5 bg-cyan-500 rounded-full border-4 border-white shadow-md z-10 md:block hidden"></div>
+                                <div class="flex flex-col md:flex-row justify-between items-start mb-6">
+                                    <div>
+                                        <h4 class="text-xl font-extrabold text-slate-800 mb-1">فریلنسری</h4>
+                                        <h5 class="text-lg font-bold text-cyan-600">تحلیلگر هوش تجاری</h5>
+                                    </div>
+                                    <div class="mt-2 md:mt-0">
+                                        <span class="px-4 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm font-bold border border-cyan-200">
+                                            مهرماه ۱۴۰۱ - تاکنون
+                                        </span>
+                                    </div>
+                                </div>
+                                <ul class="list-none space-y-3 text-sm text-slate-700 leading-7">
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-cyan-500 mt-1.5 text-xs"></i><span>ساخت و پیاده سازی داشبوردهای گزارش گیری در Power Bi RS</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-cyan-500 mt-1.5 text-xs"></i><span>پیاده سازی دیتابیس SQL Server و اتصال آن به CRM یک کسب و کار در حوزه مهاجرتی</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-cyan-500 mt-1.5 text-xs"></i><span>ارائه پیشنهادات تخصصی برای بهینه سازی برخی روندها در مدل کسب و کار با توجه به دیتاهای موجود</span></li>
+                                    <li class="flex items-start gap-3"><i class="fa-solid fa-check text-cyan-500 mt-1.5 text-xs"></i><span>ساخت ربات قیمت گذاری برای یک فروشگاه که در اسنپ شاپ مشغول به فعالیت بوده</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- *** NEW SECTION: EDUCATION HISTORY *** -->
+                <section id="education-history" class="scroll-section relative mt-12">
+                    <!-- Emerald Glassy Background -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 to-white opacity-50 -z-10 rounded-3xl"></div>
+                    
+                    <div class="bg-white/60 backdrop-blur-lg rounded-3xl shadow-sm border border-white/50 p-8">
+                        <div class="mb-8 border-b border-emerald-200/60 pb-4">
+                            <h3 class="text-2xl font-black text-slate-800 flex items-center gap-3 mb-2">
+                                <i class="fa-solid fa-graduation-cap text-emerald-500"></i>
+                                سوابق تحصیلی من
+                            </h3>
+                            <p class="text-md text-slate-600 font-medium">
+                                مسیر آکادمیک و مدارک دانشگاهی
+                            </p>
+                        </div>
+
+                        <div class="space-y-8 relative px-4">
+                            <div class="absolute right-8 top-0 bottom-0 w-1 bg-emerald-200 rounded-full md:block hidden"></div>
+
+                            <!-- Education 1 -->
+                            <div class="glass-card p-6 rounded-2xl border-r-4 border-r-emerald-500 relative hover:shadow-md transition-shadow">
+                                <div class="absolute -right-[26px] top-8 w-5 h-5 bg-emerald-500 rounded-full border-4 border-white shadow-md z-10 md:block hidden"></div>
+                                
+                                <div class="flex flex-col md:flex-row justify-between items-start">
+                                    <div>
+                                        <h4 class="text-lg font-extrabold text-slate-800 mb-1">کارشناسی ارشد (Master's)</h4>
+                                        <h5 class="text-md font-bold text-emerald-600">گرایش معماری و انرژی</h5>
+                                        <p class="text-sm text-slate-500 mt-1 font-medium"><i class="fa-solid fa-university ml-2"></i>موسسه دانشگاه هنر پارس</p>
+                                    </div>
+                                    <div class="mt-2 md:mt-0">
+                                        <span class="px-4 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-bold border border-emerald-200 flex items-center gap-2">
+                                            <i class="fa-regular fa-calendar"></i> ۱۳۹۸ - ۱۴۰۲
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Education 2 -->
+                            <div class="glass-card p-6 rounded-2xl border-r-4 border-r-emerald-400 relative hover:shadow-md transition-shadow">
+                                <div class="absolute -right-[26px] top-8 w-5 h-5 bg-emerald-400 rounded-full border-4 border-white shadow-md z-10 md:block hidden"></div>
+                                
+                                <div class="flex flex-col md:flex-row justify-between items-start">
+                                    <div>
+                                        <h4 class="text-lg font-extrabold text-slate-800 mb-1">کارشناسی (Bachelor's)</h4>
+                                        <h5 class="text-md font-bold text-emerald-600">گرایش معماری</h5>
+                                        <p class="text-sm text-slate-500 mt-1 font-medium"><i class="fa-solid fa-university ml-2"></i>موسسه دانشگاه آزاد اسلامی</p>
+                                    </div>
+                                    <div class="mt-2 md:mt-0">
+                                        <span class="px-4 py-1 bg-emerald-50 text-emerald-600 rounded-full text-sm font-bold border border-emerald-100 flex items-center gap-2">
+                                            <i class="fa-regular fa-calendar"></i> ۱۳۹۳ - ۱۳۹۸
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- *** NEW SECTION: MORE ABOUT ME *** -->
+                <section id="more-info" class="scroll-section relative mt-12 mb-12">
+                    <!-- Slate Glassy Background -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-slate-200 to-white opacity-50 -z-10 rounded-3xl"></div>
+                    
+                    <div class="bg-white/60 backdrop-blur-lg rounded-3xl shadow-sm border border-white/50 p-8">
+                        <div class="mb-8 border-b border-slate-300/60 pb-4">
+                            <h3 class="text-2xl font-black text-slate-800 flex items-center gap-3 mb-2">
+                                <i class="fa-solid fa-circle-info text-slate-500"></i>
+                                بیشتر درباره من ...
+                            </h3>
+                        </div>
+
+                        <div class="space-y-6 text-slate-700 leading-8 text-justify">
+                            <p>
+                                قبل از علاقه مندیم به دیتا و آنالیز آنها ، تو زمینه های دیگه ایی فعالیت داشتم
+                            </p>
+                            <ul class="list-disc list-inside space-y-2 pr-4">
+                                <li>۶ سال در زمینه معماری به عنوان طراح و مجری فعالیت داشتم که تا سال ۹۹ این فعالیت ادامه پیدا کرد.</li>
+                                <li>۳ سال در زمینه ادمینی پیجهای اینستاگرام فعالیت داشتم</li>
+                                <li>۴ سال در زمینه ارائه خدمات گرافیکی مثل طراحی لوگو طراحی و ساخت انیمیشن ادیت فیلم طراحی بنرهای تبلیغاتی و .....</li>
+                            </ul>
+                            
+                            <p class="font-bold mt-6">شاید براتون سوال باشه که چرا این همه کار و چجوری ۸ سال سابقه کار؟</p>
+                            <p>
+                                باید بگم یه وقتایی طول میکشه تا بتونی علاقه ات رو پیدا کنی و مجبوری از بعضی راه ها عبور کنی تا به مسیر اصلیت برسی شاید حتی یه وقتایی مجبوری چندتا کار رو با هم پیش بری فقط برای رسیدن به شناخت بهتر از خودت
+                            </p>
+                            
+                            <p class="mt-4 italic border-r-4 border-slate-400 pr-4 py-2 bg-slate-50 rounded-l-lg">
+                                من به همه این کارها افتخار میکنم و خوشحالم که تونستم تو هر زمینه ای ورود پیدا کنم و موفق باشم. شاید اگه این فعالیتها نبود این رزومه BI هم نبود ....
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Footer -->
+            <footer class="bg-white border-t border-slate-200 py-8 text-center text-slate-400 text-sm mt-12">
+                <p>&copy; ۲۰۲۵ محمدرضا مجیدزاده. تمام حقوق محفوظ است.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.scroll-section');
+            const navLinks = document.querySelectorAll('.nav-item');
+            
+            // BUG FIX: Changed rootMargin to better detect sections during scroll
+            const observerOptions = { 
+                root: null, 
+                rootMargin: '-10% 0px -50% 0px', 
+                threshold: 0 
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        
+                        // Clear active state from all links
+                        navLinks.forEach(link => { 
+                            link.classList.remove('nav-active'); 
+                            link.classList.remove('text-white'); 
+                        });
+                        
+                        // Add active state to the current section's link
+                        const activeLink = document.querySelector(`.nav-item[href="#${id}"]`);
+                        if (activeLink) { 
+                            activeLink.classList.add('nav-active'); 
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => observer.observe(section));
+        });
+
+        function formatLabel(str, maxwidth) {
+            var sections = [];
+            var words = str.split(" ");
+            var temp = "";
+            words.forEach(function(item) {
+                if (temp.length > 0) {
+                    var concat = temp + ' ' + item;
+                    if (concat.length > maxwidth) { sections.push(temp); temp = item; } 
+                    else { temp = concat; }
+                } else { temp = item; }
+            });
+            if (temp.length > 0) sections.push(temp);
+            return sections;
+        }
+
+        const commonTooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    return Array.isArray(label) ? label.join(' ') : label;
+                }
+            },
+            titleFont: { family: 'Vazirmatn' },
+            bodyFont: { family: 'Vazirmatn' }
+        };
+
+        const commonFontConfig = { family: 'Vazirmatn', size: 11 };
+
+        // --- 1. Hard Skills ---
+        const hardSkillsData = {
+            labels: [
+                'Dashboard Design', 'Looker Studio', 'Power BI', 'DAX', 'Google Sheet', 'Microsoft Excel', 
+                'SQL', 'Business Understanding', 'Data Analysis', 'SQL Server', 'ETL', 
+                'Programming', 'Integration Process', 'KPI Understanding', 'Microsoft 365', 
+                'Data Warehouse', 'Python', 'MS SQL'
+            ],
+            data: [90, 80, 80, 75, 75, 75, 75, 70, 70, 70, 65, 65, 60, 60, 60, 55, 55, 20]
+        };
+
+        const ctxHard = document.getElementById('hardSkillsChart').getContext('2d');
+        new Chart(ctxHard, {
+            type: 'bar',
+            data: {
+                labels: hardSkillsData.labels,
+                datasets: [{
+                    label: 'مهارت (%)',
+                    data: hardSkillsData.data,
+                    backgroundColor: 'rgba(79, 70, 229, 0.7)',
+                    borderColor: 'rgba(79, 70, 229, 1)',
+                    borderWidth: 0,
+                    borderRadius: 4,
+                    barPercentage: 0.7,
+                    hoverBackgroundColor: '#4F46E5'
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: { legend: { display: false }, tooltip: commonTooltipConfig },
+                scales: {
+                    x: { beginAtZero: true, max: 100, grid: { display: false }, ticks: { font: commonFontConfig } },
+                    y: { grid: { display: false }, ticks: { font: { family: 'Vazirmatn', size: 10 }, color: '#334155' } }
+                }
+            }
+        });
+
+        // --- 2. Avg Skills ---
+        const ctxAvg = document.getElementById('averageSkillChart').getContext('2d');
+        new Chart(ctxAvg, {
+            type: 'doughnut',
+            data: {
+                labels: ['Score', 'Remaining'],
+                datasets: [{
+                    data: [66.7, 33.3],
+                    backgroundColor: ['#4F46E5', '#E2E8F0'],
+                    borderWidth: 0,
+                    circumference: 180, 
+                    rotation: -90
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                cutout: '75%',
+                plugins: { legend: { display: false }, tooltip: { enabled: false } },
+                layout: { padding: { bottom: 20 } }
+            }
+        });
+
+        // --- 3. Top Skills ---
+        const ctxTop6 = document.getElementById('topSkillsChart').getContext('2d');
+        new Chart(ctxTop6, {
+            type: 'radar',
+            data: {
+                labels: ['Dashboard', 'Looker', 'Power BI', 'DAX', 'Google Sheet', 'SQL'],
+                datasets: [{
+                    label: 'Skill Level',
+                    data: [90, 80, 80, 75, 75, 75],
+                    fill: true,
+                    backgroundColor: 'rgba(6, 182, 212, 0.2)',
+                    borderColor: '#06B6D4',
+                    pointBackgroundColor: '#06B6D4',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#06B6D4'
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: { legend: { display: false }, tooltip: commonTooltipConfig },
+                scales: {
+                    r: {
+                        angleLines: { color: '#E2E8F0' },
+                        grid: { color: '#E2E8F0' },
+                        pointLabels: { font: { family: 'Vazirmatn', size: 11 }, color: '#64748B' },
+                        ticks: { display: false, backdropColor: 'transparent' },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+
+        // --- 4. AI Skills ---
+        const ctxAI = document.getElementById('aiSkillsChart').getContext('2d');
+        const aiSkillsLabels = [
+            'Prompt Engineering', 'Context Engineering', 'Retrieval-Augmented Generation (RAG)',
+            'AI-Powered Data Analysis', 'LLM Fine-tuning', 'Autonomous AI Agents'
+        ];
+        const formattedAILabels = aiSkillsLabels.map(l => formatLabel(l, 25));
+        new Chart(ctxAI, {
+            type: 'bar',
+            data: {
+                labels: formattedAILabels,
+                datasets: [{
+                    label: 'Skill Level (%)',
+                    data: [95, 95, 90, 80, 75, 75],
+                    backgroundColor: 'rgba(139, 92, 246, 0.7)',
+                    borderColor: 'rgba(139, 92, 246, 1)',
+                    borderWidth: 0,
+                    borderRadius: 6,
+                    barPercentage: 0.6
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: { legend: { display: false }, tooltip: commonTooltipConfig },
+                scales: {
+                    x: { beginAtZero: true, max: 100, grid: { display: false }, ticks: { font: commonFontConfig } },
+                    y: { grid: { display: false }, ticks: { font: { family: 'Vazirmatn', size: 11 }, color: '#475569' } }
+                }
+            }
+        });
+
+        // --- 5. Dev Skills ---
+        const ctxDev = document.getElementById('devSkillsChart').getContext('2d');
+        new Chart(ctxDev, {
+            type: 'bar',
+            data: {
+                labels: ['Python', 'Django', 'Flask', 'FastAPI', 'HTML/CSS', 'CRM Development', 'Call Center AI', 'Prediction Models'],
+                datasets: [{
+                    label: 'Proficiency (%)',
+                    data: [90, 85, 80, 75, 85, 80, 90, 85],
+                    backgroundColor: 'rgba(225, 29, 72, 0.7)',
+                    borderColor: 'rgba(225, 29, 72, 1)',
+                    borderWidth: 0,
+                    borderRadius: 4,
+                    barPercentage: 0.6,
+                    hoverBackgroundColor: '#BE123C'
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: { legend: { display: false }, tooltip: commonTooltipConfig },
+                scales: {
+                    x: { beginAtZero: true, max: 100, grid: { display: false }, ticks: { font: commonFontConfig } },
+                    y: { grid: { display: false }, ticks: { font: { family: 'Vazirmatn', size: 10 }, color: '#334155' } }
+                }
+            }
+        });
+
+        const ctxAvgDev = document.getElementById('averageDevSkillChart').getContext('2d');
+        new Chart(ctxAvgDev, {
+            type: 'doughnut',
+            data: {
+                labels: ['Score', 'Remaining'],
+                datasets: [{
+                    data: [85, 15], 
+                    backgroundColor: ['#E11D48', '#E2E8F0'],
+                    borderWidth: 0,
+                    circumference: 180, 
+                    rotation: -90
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                cutout: '75%',
+                plugins: { legend: { display: false }, tooltip: { enabled: false } },
+                layout: { padding: { bottom: 20 } }
+            }
+        });
+
+        const ctxDevProfile = document.getElementById('devProfileChart').getContext('2d');
+        new Chart(ctxDevProfile, {
+            type: 'radar',
+            data: {
+                labels: ['Backend Dev', 'Frontend Dev', 'AI Engineering', 'CMS/CRM', 'Scripting', 'API Dev'],
+                datasets: [{
+                    label: 'Focus Area',
+                    data: [90, 80, 95, 85, 90, 85],
+                    fill: true,
+                    backgroundColor: 'rgba(225, 29, 72, 0.2)',
+                    borderColor: '#E11D48',
+                    pointBackgroundColor: '#E11D48',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#E11D48'
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: { legend: { display: false }, tooltip: commonTooltipConfig },
+                scales: {
+                    r: {
+                        angleLines: { color: '#E2E8F0' },
+                        grid: { color: '#E2E8F0' },
+                        pointLabels: { font: { family: 'Vazirmatn', size: 11 }, color: '#64748B' },
+                        ticks: { display: false, backdropColor: 'transparent' },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+
+        // --- 6. Soft Skills ---
+        const softSkillsData = {
+            labels: [
+                'Photoshop', 'Illustrator', 'Graphic Design', 'Using ChatGPT', 'Continuous Learning',
+                'After Effects', 'Automation', 'Networking', 'Premiere', 'UI Design', 'Google Sheet Script', 'JavaScript'
+            ],
+            data: [90, 90, 85, 80, 80, 80, 75, 70, 70, 70, 50, 15]
+        };
+
+        const ctxSoft = document.getElementById('softSkillsChart').getContext('2d');
+        new Chart(ctxSoft, {
+            type: 'bar',
+            data: {
+                labels: softSkillsData.labels,
+                datasets: [{
+                    label: 'مهارت (%)',
+                    data: softSkillsData.data,
+                    backgroundColor: 'rgba(245, 158, 11, 0.7)',
+                    borderColor: 'rgba(245, 158, 11, 1)',
+                    borderWidth: 0,
+                    borderRadius: 4,
+                    barPercentage: 0.7,
+                    hoverBackgroundColor: '#D97706'
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: { legend: { display: false }, tooltip: commonTooltipConfig },
+                scales: {
+                    x: { beginAtZero: true, max: 100, grid: { display: false }, ticks: { font: commonFontConfig } },
+                    y: { grid: { display: false }, ticks: { font: { family: 'Vazirmatn', size: 10 }, color: '#334155' } }
+                }
+            }
+        });
+
+        const ctxAvgSoft = document.getElementById('averageSoftSkillChart').getContext('2d');
+        new Chart(ctxAvgSoft, {
+            type: 'doughnut',
+            data: {
+                labels: ['Score', 'Remaining'],
+                datasets: [{
+                    data: [76.8, 23.2],
+                    backgroundColor: ['#F59E0B', '#E2E8F0'],
+                    borderWidth: 0,
+                    circumference: 180, 
+                    rotation: -90
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                cutout: '75%',
+                plugins: { legend: { display: false }, tooltip: { enabled: false } },
+                layout: { padding: { bottom: 20 } }
+            }
+        });
+
+        const ctxTop6Soft = document.getElementById('topSoftSkillsChart').getContext('2d');
+        new Chart(ctxTop6Soft, {
+            type: 'radar',
+            data: {
+                labels: ['Photoshop', 'Illustrator', 'Graphic Design', 'ChatGPT', 'Learning', 'After Effects'],
+                datasets: [{
+                    label: 'Skill Level',
+                    data: [90, 90, 85, 80, 80, 80],
+                    fill: true,
+                    backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                    borderColor: '#F59E0B',
+                    pointBackgroundColor: '#F59E0B',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#F59E0B'
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: commonTooltipConfig
+                },
+                scales: {
+                    r: {
+                        angleLines: { color: '#E2E8F0' },
+                        grid: { color: '#E2E8F0' },
+                        pointLabels: { font: { family: 'Vazirmatn', size: 11 }, color: '#64748B' },
+                        ticks: { display: false, backdropColor: 'transparent' },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+
+        // --- Impact Chart ---
+        const ctxBar = document.getElementById('impactBarChart').getContext('2d');
+        new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: ['اتوماسیون گزارش‌ها', 'یکپارچگی CRM', 'بهینه‌سازی دیتابیس', 'سرعت تصمیم‌گیری'].map(l => formatLabel(l, 15)),
+                datasets: [{
+                    label: 'امتیاز تأثیر',
+                    data: [95, 100, 85, 90],
+                    backgroundColor: ['#10B981', '#4F46E5', '#06B6D4', '#F59E0B'],
+                    borderRadius: 6,
+                    barPercentage: 0.5
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: { legend: { display: false }, tooltip: commonTooltipConfig },
+                scales: {
+                    y: { beginAtZero: true, max: 100, grid: { display: false }, ticks: { display: false } },
+                    x: { grid: { display: false }, ticks: { font: commonFontConfig, color: '#64748B' } }
+                }
+            }
+        });
+
+        // --- Tools Polar ---
+        const ctxPolar = document.getElementById('toolsPolarChart').getContext('2d');
+        new Chart(ctxPolar, {
+            type: 'polarArea',
+            data: {
+                labels: ['SQL', 'Analytics', 'Python', 'Looker', 'Excel'],
+                datasets: [{
+                    data: [85, 75, 60, 80, 95],
+                    backgroundColor: [
+                        'rgba(6, 182, 212, 0.7)',
+                        'rgba(16, 185, 129, 0.7)',
+                        'rgba(245, 158, 11, 0.7)',
+                        'rgba(236, 72, 153, 0.7)',
+                        'rgba(99, 102, 241, 0.7)'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: { legend: { display: false }, tooltip: commonTooltipConfig },
+                scales: {
+                    r: { grid: { color: '#334155' }, ticks: { display: false } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
